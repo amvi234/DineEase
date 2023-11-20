@@ -31,13 +31,27 @@
       </div>
       <button type="submit" class="btn btn-success">Add Receipe</button>
     </form>
-    <table class="table">
+
+    <div class="mt-5">
+      <div class="mx-auto col-6">
+        <form>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Search Food</label>
+          <input name="search"  type="text" class="form-control">
+          <hr>
+        </div>
+        <button type="submit" class="btn btn-primary">Search</button>
+      </form>
+      </div>
+    </div>
+    <table class="table mt-5">
       <thead>
         <tr>
           <th scope="col">#</th>
           <th scope="col">Receipe Name</th>
           <th scope="col">Receipe Description</th>
           <th scope="col">Receipe Image</th>
+          <th scope="col">Receipe Actions</th>
         </tr>
       </thead>
       <tbody>
@@ -47,7 +61,8 @@
           <td>{{receipe.receipe_name}}</td>
           <td>{{receipe.receipe_description}}</td>
           <td>{{receipe.receipe_image}}</td>
-          <td><a href="/delete_receipe/{{receipe.id}}/" class="btn btn-danger">Delete</a></td>
+          <td><a href="/delete_receipe/{{receipe.id}}/" class="btn btn-danger m-2">Delete</a></td>
+          <td><a href="/update_receipe/{{receipe.id}}/" class="btn btn-success">Update</a></td>
         </tr>
         {% endfor %}
       </tbody>
