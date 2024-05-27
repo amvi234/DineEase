@@ -34,8 +34,6 @@ class Student(models.Model):
     student_id = models.OneToOneField(StudentId, related_name="studentid", on_delete=models.CASCADE)
     student_name = models.CharField(max_length=100)
     student_email = models.EmailField(unique=True)
-    student_age = models.IntegerField(default=18)
-    student_address = models.TextField()
 
     def __str__(self) -> str:
         return self.student_name
