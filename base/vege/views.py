@@ -3,7 +3,7 @@ from .models import *
 from django.http import HttpResponse
 from django.contrib.auth.models import User
 from django.contrib import messages
-from django.contrib.auth import authenticate
+from django.contrib.auth import authenticate, login
 
 # Create your views here.
 def receipes(request):
@@ -19,7 +19,7 @@ def receipes(request):
             receipe_description = receipe_description,
         )
 
-        return redirect('/receipes')
+        return redirect('/')
     
     queryset = Receipe.objects.all()
 
@@ -47,7 +47,7 @@ def update_receipe(request, id):
             queryset.receipe_image = receipe_image
 
         queryset.save()
-        return redirect('/receipes')
+        return redirect('/')
 
     context = {'receipe': queryset}
 
@@ -56,7 +56,7 @@ def update_receipe(request, id):
 def delete_receipe(request, id):
     queryset = Receipe.objects.get(id = id)
     queryset.delete()
-    return redirect('/receipes')
+    return redirect('/')
 
 def login_page(request):
     
@@ -76,7 +76,7 @@ def login_page(request):
         
         else:
             login(request, user)
-            return redirect('/receipes')
+            return redirect('/')
         
     return render(request, 'login.html')
 
@@ -104,7 +104,7 @@ def register_page(request):
         messages.info(request, 'Account Created Successfully')
 
 
-        return redirect('/register/')
+        return redirect('/login/')
 
     return render(request, 'register.html')
 
