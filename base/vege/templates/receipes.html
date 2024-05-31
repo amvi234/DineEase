@@ -19,14 +19,20 @@
 				method="post"
 				enctype="multipart/form-data">
 				{% csrf_token %}
-        <a style="display: flex; justify-content: flex-end; text-decoration: none;" href="{% url 'logout' %}">
+				<a
+					style="
+						display: flex;
+						justify-content: flex-end;
+						text-decoration: none;
+					"
+					href="/logout">
 					<button class="btn btn-danger">Logout</button>
-        </a>
-        <hr />
+				</a>
+				<hr />
 				<div style="color: mediumblue; margin-left: 350px">
 					<h2>Add Receipe</h2>
 				</div>
-				
+
 				<div class="mb-3">
 					<label>Receipe Name</label>
 					<input
@@ -39,19 +45,16 @@
 					<label>Receipe Description</label>
 					<textarea
 						class="form-control"
-            required
+						required
 						name="receipe_description"></textarea>
 				</div>
 				<div class="mb-3">
 					<label class="form-label">Receipe Image File Location</label>
 					<input class="form-control" name="receipe_image" type="file"
 				</div>
-        <br>
-				<button
-					class="btn btn-primary form-control">  
-					Add Receipe
-				</button>
-    
+				<br />
+				<button class="btn btn-primary form-control">Add Receipe</button>
+
 				<hr />
 			</form>
 			<!-- <div>
