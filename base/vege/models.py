@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.contrib.auth.base_user import AbstractBaseUser
 
 # Create your models here.
 class Receipe(models.Model):
@@ -8,6 +9,11 @@ class Receipe(models.Model):
     receipe_description = models.TextField()
     receipe_image = models.ImageField(upload_to="receipe")
     receipe_view_count = models.IntegerField(default=1)
+
+class CustomUser(AbstractBaseUser):
+    first_name = models.CharField(max_length=50)
+    last_name = models.CharField(max_length=50, null=True)
+    email = models.EmailField(max_length=50, unique=True)
 
 class Department(models.Model):
     department = models.CharField(max_length=100)

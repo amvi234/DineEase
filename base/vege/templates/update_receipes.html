@@ -16,18 +16,13 @@
 	<body>
 		<div class="container mt-5">
 			<form
-				class="col-6-mx-auto card p-3 shadow-lg"
 				method="post"
 				enctype="multipart/form-data">
 				{% csrf_token %}
 				<h2>UpdFate Receipe</h2>
 				<hr />
 				<div class="mb-3">
-					<label
-						for="exampleInputEmail1"
-						class="form-label"
-						>Receipe Name</label
-					>
+					<label class="form-label">Receipe Name</label>
 					<input
 						name="receipe_name"
 						value="{{receipe.receipe_name}}"
@@ -36,11 +31,7 @@
 						class="form-control" />
 				</div>
 				<div class="mb-3">
-					<label
-						for="exampleInputPassword1"
-						class="form-label"
-						>Receipe Description</label
-					>
+					<label class="form-label">Receipe Description</label>
 					<textarea
 						class="form-control"
 						value=""
@@ -50,11 +41,7 @@
 					>
 				</div>
 				<div class="mb-3">
-					<label
-						for="exampleInputPassword1"
-						class="form-label"
-						>Receipe Image</label
-					>
+					<label class="form-label">Receipe Image File Location</label>
 					<input
 						name="receipe_image"
 						type="file"
