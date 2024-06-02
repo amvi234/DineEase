@@ -15,10 +15,7 @@
 
 	<body>
 		<div class="container mt-5">
-			<form
-				method="post"
-				enctype="multipart/form-data">
-				{% csrf_token %}
+			
 				<a
 					style="
 						display: flex;
@@ -32,7 +29,10 @@
 				<div style="color: mediumblue; margin-left: 350px">
 					<h2>Add Receipe</h2>
 				</div>
-
+				<form
+				method="post"
+				enctype="multipart/form-data">
+				{% csrf_token %}
 				<div class="mb-3">
 					<label>Receipe Name</label>
 					<input

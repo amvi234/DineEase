@@ -63,6 +63,9 @@ def delete_receipe(request, id):
 
 def login_page(request):
     # queryset = CustomUser.objects.get(id = id)
+    if request.user.is_authenticated:
+        return redirect('/')
+
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
@@ -71,9 +74,9 @@ def login_page(request):
             messages.error(request, 'Invalid username')
             return redirect('/login')
         
-        user = authenticate(username = username, password = password)
+        user = authenticate(username=username, password=password)
 
-        if user is not None:
+        if user is None:
             messages.error(request, 'Invalid Password')
             return redirect('/login')
         
@@ -81,15 +84,15 @@ def login_page(request):
             login(request, user)
             return redirect('/')
         
-    return render(request, 'login.html')
+    return render(request, 'login.html', {})
 
 def logout_view(request):
     logout(request)
     return redirect('/login/')
 
 def register_page(request):
-    # if request.user.is_authenticated:
-    #     return redirect('/')
+    if request.user.is_authenticated:
+        return redirect('/')
     
     if request.method == "POST":
         first_name = request.POST.get('first_name')
@@ -97,17 +100,21 @@ def register_page(request):
         username = request.POST.get('username')
         password = request.POST.get('password')
 
+        if len(password) < 8:
+            messages.error(request, 'Password must be atleast 8 characters')
+            return redirect('register')
+
         user = User.objects.filter(username=username)
 
         if user.exists():
             messages.info(request, 'username already exists')
             return redirect('/register/')
 
-        user = User.objects.create(
+        user = User.objects.create_user(
             first_name = first_name,
             last_name = last_name,
             username = username,
-            password = password
+            password = password,
         )
         user.save()
 
