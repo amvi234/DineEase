@@ -19,7 +19,7 @@
 				method="post"
 				enctype="multipart/form-data">
 				{% csrf_token %}
-				<h2>Register</h2>
+				<h2 style="color: green;">Register</h2>
 				<hr />
 				{% if messages %}
 				<div style="color: red;"
@@ -55,7 +55,7 @@
 						class="form-control"
 						name="password" />
 				</div>
-				<p>Already have an account <a href="/login/">Login</a></p>
+				<p>Already have an account <a style="color: red; text-decoration: none;" href="/login/">Login</a></p>
 				<button class="btn btn-primary" type="submit">Submit</button>
 			</form>
 		</div>
