@@ -15,21 +15,17 @@
 
 	<body>
 		<div class="container mt-5">
-			
-				<a
-					style="
-						display: flex;
-						justify-content: flex-end;
-						text-decoration: none;
-					"
-					href="/logout">
-					<button class="btn btn-danger">Logout</button>
-				</a>
-				<hr />
-				<div style="color: mediumblue; margin-left: 350px">
-					<h2>Add Receipe</h2>
-				</div>
-				<form
+			<h2 style="margin-left: 350px; color: red">Admin Dashboard</h2>
+			<a
+				style="display: flex; justify-content: flex-end; text-decoration: none"
+				href="/logout">
+				<button class="btn btn-danger">Logout</button>
+			</a>
+			<hr />
+			<div style="color: mediumblue; margin-left: 390px">
+				<h2>Add Receipe</h2>
+			</div>
+			<form
 				method="post"
 				enctype="multipart/form-data">
 				{% csrf_token %}
