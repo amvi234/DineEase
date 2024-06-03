@@ -10,12 +10,12 @@ from django.contrib.auth.decorators import login_required
 def receipes(request):
     if request.method == "POST":
         data = request.POST
-        receipe_image = request.FILES.get('receipe_image')
+        receipe_price = data.get('receipe_price')
         receipe_name = data.get('receipe_name')
         receipe_description = data.get('receipe_description')
 
         Receipe.objects.create(
-            receipe_image = receipe_image,
+            receipe_price = receipe_price,
             receipe_name = receipe_name,
             receipe_description = receipe_description,
         )
@@ -37,7 +37,7 @@ def update_receipe(request, id):
 
     if request.method == 'POST':
         data = request.POST
-        receipe_image = request.FILES.get('receipe_image')
+        receipe_price = data.get('receipe_price')
         receipe_name = data.get('receipe_name')
         receipe_description = data.get('receipe_description')
 
@@ -45,8 +45,8 @@ def update_receipe(request, id):
         if receipe_description:
             queryset.receipe_description = receipe_description
         
-        if receipe_image:
-            queryset.receipe_image = receipe_image
+        if receipe_price:
+            queryset.receipe_price = receipe_price
 
         queryset.save()
         return redirect('/')

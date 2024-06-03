@@ -19,7 +19,7 @@
 				method="post"
 				enctype="multipart/form-data">
 				{% csrf_token %}
-				<h2>UpdFate Receipe</h2>
+				<h2>Update Receipe</h2>
 				<hr />
 				<div class="mb-3">
 					<label class="form-label">Receipe Name</label>
@@ -41,11 +41,14 @@
 					>
 				</div>
 				<div class="mb-3">
-					<label class="form-label">Receipe Image File Location</label>
-					<input
-						name="receipe_image"
-						type="file"
-						class="form-control" />
+					<label class="form-label">Receipe Price</label>
+					<textarea
+						class="form-control"
+						value="{{receipes.receipe_price}}"
+						name="receipe_price"
+						required>
+{{receipe.receipe_price}}</textarea
+					>
 				</div>
 				<button
 					type="submit"
