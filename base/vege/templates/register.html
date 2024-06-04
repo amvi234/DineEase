@@ -10,7 +10,7 @@
 		<meta
 			name="viewport"
 			content="width=device-width, initial-scale=1.0" />
-		<title>Document</title>
+		<title>Register</title>
 	</head>
 
 	<body>
@@ -19,10 +19,11 @@
 				method="post"
 				enctype="multipart/form-data">
 				{% csrf_token %}
-				<h2 style="color: green;">Register</h2>
+				<h2 style="color: green">Register</h2>
 				<hr />
 				{% if messages %}
-				<div style="color: red;"
+				<div
+					style="color: red"
 					role="alert">
 					{% for message in messages %} {{ message }} {% endfor %}
 				</div>
@@ -32,31 +33,52 @@
 					<input
 						type="text"
 						class="form-control"
-						name="first_name" />
+						name="first_name"
+						required />
 				</div>
 				<div class="mb-3">
 					<label class="form-label">Last Name</label>
 					<input
 						type="text"
 						class="form-control"
-						name="last_name" />
+						name="last_name"
+						required />
 				</div>
 				<div class="mb-3">
 					<label class="form-label">Email</label>
 					<input
 						type="email"
 						class="form-control"
-						name="username" />
+						name="username"
+						required />
 				</div>
 				<div class="mb-3">
 					<label class="form-label">Password</label>
 					<input
 						type="password"
 						class="form-control"
-						name="password" />
+						name="password"
+						required />
 				</div>
-				<p>Already have an account <a style="color: red; text-decoration: none;" href="/login/">Login</a></p>
-				<button class="btn btn-primary" type="submit">Submit</button>
+				<div class="mb-3">
+					<label class="form-label">Is Buyer?</label>
+					<input
+						type="checkbox"
+						name="is_buyer" />
+				</div>
+				<p>
+					Already have an account
+					<a
+						style="color: red; text-decoration: none"
+						href="/login/"
+						>Login</a
+					>
+				</p>
+				<button
+					class="btn btn-primary"
+					type="submit">
+					Submit
+				</button>
 			</form>
 		</div>
 	</body>
