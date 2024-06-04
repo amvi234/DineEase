@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -22,6 +23,14 @@
 			.btn-primary:hover {
 				background-color: #0056b3;
 				border-color: #004085;
+			}
+			.inline-container {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+			}
+			.hidden {
+				display: none;
 			}
 		</style>
 	</head>
@@ -63,13 +72,28 @@
 				</tbody>
 			</table>
 			<hr />
-			<h3 style="text-align: center">
+            <div class="inline-container">
+			<h3 style="margin-left: 70%;">
 				Total = Rs <span id="total">{{ total }}</span>
 			</h3>
+			<!-- <a id="reset" class="btn btn-primary">Reset</a> -->
+        </div>
+			<div
+				id="payment-section"
+				class="inline-container hidden">
+				<h2>Done adding Receipes ??</h2>
+				<a
+					id="proceed-btn"
+					class="btn btn-primary"
+                    href="/upi_id"
+					>Proceed to Payment</a
+				>
+			</div>
 		</div>
 		<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 		<script>
 			$(document).ready(function () {
+				let added_items = 0;
 				$(".add-btn").on("click", function () {
 					let button = $(this);
 					let receipeId = button.data("id");
@@ -90,14 +114,24 @@
 									.text("Remove")
 									.removeClass("btn-primary")
 									.addClass("btn-danger");
+								added_items++;
 							} else {
 								button
 									.text("Add")
 									.removeClass("btn-danger")
 									.addClass("btn-primary");
+								added_items--;
+							}
+							if (added_items > 0) {
+								$("#payment-section").removeClass("hidden");
+							} else {
+								$("#payment-section").addClass("hidden");
 							}
 						},
 					});
+				});
+				$("#proceed-btn").on("click", function () {
+					$("#payment-image").removeClass("hidden");
 				});
 			});
 		</script>

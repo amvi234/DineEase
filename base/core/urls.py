@@ -23,6 +23,7 @@ urlpatterns = [
     path('', receipes, name="receipes"),
     path('home/', home, name="home"),
     path('update_total/', update_total, name="update_total"),
+    path('upi_id/', upi_id, name="upi_id"),
     path('register/', register_page, name="register"),
     path('login/', login_page, name="login_page"),
     path('logout/', logout_view, name="logout"),
