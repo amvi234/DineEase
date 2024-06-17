@@ -9,7 +9,6 @@ class Receipe(models.Model):
     receipe_name = models.CharField(max_length=100)
     receipe_description = models.TextField()
     receipe_price = models.IntegerField(default=0)
-    receipe_view_count = models.IntegerField(default=1)
 
     def __str__(self) -> str:
         return self.receipe_name

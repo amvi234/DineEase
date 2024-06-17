@@ -134,8 +134,8 @@ def register_page(request):
             username = username,
             password = password,
         )
-        user.is_staff = is_buyer
-        user.is_superuser = not is_buyer
+        user.is_staff = not is_buyer
+        user.is_superuser = is_buyer
         user.save()
 
         messages.info(request, 'Account Created Successfully')

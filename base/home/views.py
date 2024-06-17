@@ -11,7 +11,7 @@ def update_total(request):
         action = request.POST.get('action')
         receipe = Receipe.objects.get(id=receipe_id)
         total = request.session.get('total', 0.0)
-        reset = request.session.get('reset')
+        # reset = request.session.get('reset')
 
         if action == 'add':
             total += receipe.receipe_price
