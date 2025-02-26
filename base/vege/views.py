@@ -1,10 +1,10 @@
+from django.http import JsonResponse
 from django.shortcuts import render, redirect
 from .models import *
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import user_passes_test
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
-from django.contrib.auth.decorators import login_required
 from django.views.decorators.csrf import csrf_exempt
 
 def is_superuser(user):
@@ -129,3 +129,8 @@ def register_page(request):
         return redirect("/login/")
 
     return render(request, "register.html")
+
+def reset_total(request):
+    if request.headers.get('x-requested-with') == 'XMLHttpRequest' and request.method == 'POST':
+        request.session['total'] = 0.0
+        return JsonResponse({'success': True})

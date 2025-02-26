@@ -34,6 +34,6 @@ products and ingredients available for any particular receipe and update the lis
 
 **Future Enhancements:**
 1. Enable a full-functioning Payment Gateway.
-2. Allow handling of admin and member user workflow much cleaner.
-3. Interactive Receipe images for better visualization.
-4. Implement a more comprehensive Receipe search functionality.
+2. Implement a more comprehensive Receipe search functionality.
+3. Add user's details at top left corner.
+
