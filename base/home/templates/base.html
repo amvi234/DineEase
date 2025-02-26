@@ -91,24 +91,22 @@
 		<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 		<script>
 			$(document).ready(function () {
-				// Reset the total amount on page load via AJAX
+				// Reset the total amount on page load via AJAX.
 				$.ajax({
-					url: '{% url "reset_total" %}', // You'll need to create this view
+					url: '{% url "reset_total" %}',
 					type: "POST",
 					data: {
 						csrfmiddlewaretoken: "{{ csrf_token }}",
 					},
 					success: function (response) {
-						// Update the displayed total to 0
 						$("#total").text("0.00");
 
-						// Reset all buttons to "Add" state
+						// Reset all buttons to "Add" state.
 						$(".add-btn")
 							.text("Add")
 							.removeClass("btn-danger")
 							.addClass("btn-primary");
 
-						// Hide payment section
 						$("#payment-section").addClass("hidden");
 					},
 				});
