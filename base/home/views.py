@@ -38,7 +38,7 @@ def home(request):
 
 def create_razorpay_payment_link(request):
     client = razorpay.Client(auth=(TEST_KEY_ID, TEST_KEY_SECRET))
-
+    print(client)
     total_amount = request.session.get('total', 0.0) * 100 
     expire_by = int(time.time()) + (24 * 60 * 60) 
     reference_id = str(uuid.uuid4())[:8]
