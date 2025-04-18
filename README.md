@@ -2,9 +2,7 @@
 Often restaurants have the issue of maintaining thr transactions. To solve the common issue of Point of Sale(POS) System. I have developed a dashboard and restaurant items listed and added by admins. THe staff users will be responsible for the payment. Here with the integrated Razorpay Payment Gateway implementation, users can monitor and analyze each and every transactions easily.
 
 **Screen Recording:**
-
-[Screencast from 12-04-25 10:03:08 AM IST.webm](https://github.com/user-attachments/assets/d370fe85-68a8-4fbe-838c-d2f726eb8527)
-[Screencast from 12-04-25 10:04:19 AM IST.webm](https://github.com/user-attachments/assets/3efbf534-e82e-4cce-9db0-ab5aac349369)
+- ![output](https://github.com/user-attachments/assets/b654da54-a509-4052-b6ff-738ee513fb48)
 
 **Introduction:**
 - This complete **backend-only web application** uses Django, Python, HTML, and CSS. Concepts of AJAX and Javascript are also included in the project.
