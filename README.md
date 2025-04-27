@@ -1,3 +1,4 @@
+# DINEEASE APP
 **Problem Statement:**
 Often restaurants have the issue of maintaining thr transactions. To solve the common issue of Point of Sale(POS) System. I have developed a dashboard and restaurant items listed and added by admins. THe staff users will be responsible for the payment. Here with the integrated Razorpay Payment Gateway implementation, users can monitor and analyze each and every transactions easily.
 
