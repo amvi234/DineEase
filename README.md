@@ -1,20 +1,14 @@
 **Problem Statement:**
-Often restaurants have the issue of maintaining thr transactions. To solve the common issue of Point of Sale(POS) System. I have developed a dashboard and restaurant items listed and added by admins. THe staff users will be responsible for the payment. Here with the integrated Razorpay Payment Gateway implementation, users can monitor and analyze each and every transactions easily.
+Often restaurants have the issue of maintaining their transactions. To solve the common issue of Point of Sale(POS) System. I have developed a dashboard containing products. Here with the integrated Razorpay Payment Gateway implementation, users can monitor and analyze each and every transactions easily.
 
-**Screen Recording:**
-- ![output](https://github.com/user-attachments/assets/b654da54-a509-4052-b6ff-738ee513fb48)
+**Project Demo**
+[![DineEase App Demo](https://img.youtube.com/vi/ui89GN7dRDQ/maxresdefault.jpg)](https://youtu.be/ui89GN7dRDQ?si=T1liRP2kL3dcwbHh)
+
 
 **Introduction:**
 - This complete **backend-only web application** uses Django, Python, HTML, and CSS. Concepts of AJAX and Javascript are also included in the project.
-- There are two types of users accessing the application for their purposes. 
-- The web application is focused on managing the different recipes, focused mainly on the restaurant workers to simplify their work process. 
-
-**Features:**
-- There are two types of workers in the restaurant, one is the admin - who will manage the 
-products and ingredients available for any particular recipe and update the list of currently available recipes in the dashboard.
-- The other type of user is the Member, who can only access the Members Dashboard Page. On the Member's Dashboard Page, the users can take up the recipes, based on the order received, and by calculating the total amount, they can proceed to apply for payment. 
-- The admin users are the only ones who can update and delete the list of recipes. They are the ones who can alter the available recipes list.
-- There is a razorpay payment integration setup, which makes it easy for the admins to monitor and manage the Point of Sale system problem statement.
+- Access Control - There are two types of users accessing the application for their purposes. 
+- Razorpay Payment Gateway - The web application is focused on managing the transactions, focused mainly on the restaurant payments to simplify their work process. 
 
 **Technologies Used:**
 - HTML 
