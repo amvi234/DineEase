@@ -1,9 +1,11 @@
-# DINEEASE APP
+# Manifest Recipes
+
 **Problem Statement:**
 Often restaurants have the issue of maintaining their transactions. To solve the common issue of Point of Sale(POS) System. I have developed a dashboard containing products. Here with the integrated Razorpay Payment Gateway implementation, users can monitor and analyze each and every transactions easily.
 
-**Project Demo**
-[![Watch on YouTube](https://upload.wikimedia.org/wikipedia/commons/7/75/YouTube_social_white_square_(2017).svg)](https://youtu.be/ui89GN7dRDQ?si=T1liRP2kL3dcwbHh)
+## 📽️ Project Demo
+
+[![▶️ Watch the Demo](https://img.youtube.com/vi/ui89GN7dRDQ/maxresdefault.jpg)](https://youtu.be/ui89GN7dRDQ?si=T1liRP2kL3dcwbHh)
 
 
 **Introduction:**
